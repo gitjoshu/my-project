@@ -1,58 +1,56 @@
-import Articles from "../../components/articles"
-import { fetchAPI } from "../../lib/api"
-import Layout from "../../components/layout"
-import Seo from "../../components/seo"
+// import Articles from "../../components/articles";
+import Layout from "../../components/layout";
+// import Seo from "../../components/seo";
+import { getArticlesBySlug } from "../../queries/articles";
+import getCategories, { getCategorieBySlug } from "../../queries/categories";
+import client from "../../apollo-client";
+import axios from "axios";
+import { getQuery } from "../../queries";
 
 const Category = ({ category, categories }) => {
-  const seo = {
-    metaTitle: category.attributes.name,
-    metaDescription: `All ${category.attributes.name} articles`,
-  }
+  console.log(category);
+  //   const seo = {
+  //     metaTitle: category.attributes.name,
+  //     metaDescription: `All ${category.attributes.name} articles`,
+  //   };
 
   return (
-    <Layout categories={categories.data}>
-      <Seo seo={seo} />
+    <Layout categories={categories}>
+      {/* <Seo seo={seo} /> */}
       <div className="uk-section">
         <div className="uk-container uk-container-large">
           <h1>{category.attributes.name}</h1>
-          <Articles articles={category.attributes.articles.data} />
+          {/* <Articles articles={category.attributes.articles.data} /> */}
         </div>
       </div>
     </Layout>
-  )
-}
+  );
+};
+export default Category;
 
 export async function getStaticPaths() {
-  const categoriesRes = await fetchAPI("/categories", { fields: ["slug"] })
-
+  const { data: categoriesData } = await getQuery(getCategories);
   return {
-    paths: categoriesRes.data.map((category) => ({
+    paths: categoriesData.categories.data.map((category) => ({
       params: {
         slug: category.attributes.slug,
       },
     })),
     fallback: false,
-  }
+  };
 }
 
 export async function getStaticProps({ params }) {
-  const matchingCategories = await fetchAPI("/categories", {
-    filters: { slug: params.slug },
-    populate: {
-      articles: {
-        populate: "*",
-      },
-    },
-  })
-  const allCategories = await fetchAPI("/categories")
-
+  const { data: categoryData } = await getQuery(
+    getCategorieBySlug,
+    params.slug
+  );
+  const { data: categoriesData } = await getQuery(getCategories);
   return {
     props: {
-      category: matchingCategories.data[0],
-      categories: allCategories,
+      category: categoryData.categories.data[0],
+      categories: categoriesData.categories.data,
     },
-    revalidate: 1,
-  }
+    revalidate: 86400, // 60 * 60 * 24,
+  };
 }
-
-export default Category
