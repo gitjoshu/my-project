@@ -1,13 +1,9 @@
 import Image from "next/image";
-import Layout from "../../components/layout";
+import Seo from "../../components/seo";
 import { getStrapiMedia } from "../../lib/media";
-// import NextImage from "../../components/image";
-// import Seo from "../../components/seo";
-import { getArticleBySlug, getArticlesBySlug } from "../../queries/articles";
-// import getArticlesBySlug from "../../queries/articlesBySlug";
-import getCategories from "../../queries/categories";
-import client from "../../apollo-client";
 import { getQuery } from "../../queries";
+import { getArticleBySlug, getArticlesBySlug } from "../../queries/articles";
+import getCategories from "../../queries/categories";
 
 const Article = ({ article, categories }) => {
   console.log(article);
@@ -21,8 +17,8 @@ const Article = ({ article, categories }) => {
   };
 
   return (
-    <Layout categories={categories}>
-      {/* <Seo seo={seo} /> */}
+    <>
+      <Seo seo={seo} />
       <h1>{article.attributes.title}</h1>
       <Image src={imageUrl} width={50} height={50} />
 
@@ -30,7 +26,7 @@ const Article = ({ article, categories }) => {
         <p>{article.attributes.description}</p>
         <p>{article.attributes.published_at}</p>
       </div>
-    </Layout>
+    </>
   );
 };
 

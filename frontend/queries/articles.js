@@ -1,8 +1,8 @@
 import { gql } from "@apollo/client";
 
-const getArticles = (pageInitial, pageSize = 3) => gql`
+const getArticles = ({ actualPage, pageSize }) => gql`
   query Article {
-    articles(pagination: { page: ${pageInitial}, pageSize: ${pageSize} }, sort: "createdAt:desc") {
+    articles(pagination: { page: ${actualPage}, pageSize: ${pageSize} }, sort: "createdAt:desc") {
       data {
         attributes {
           title

@@ -65,16 +65,17 @@ const Navbar = ({ categories }) => {
               spacing={4}
               display={{ base: "none", md: "flex" }}
             >
-              {categories.map((category, index) => {
-                return (
-                  <NavLink
-                    key={index}
-                    href={`/category/${category.attributes.slug}`}
-                  >
-                    {category.attributes.name}
-                  </NavLink>
-                );
-              })}
+              {categories &&
+                categories.map((category, index) => {
+                  return (
+                    <NavLink
+                      key={index}
+                      href={`/category/${category.attributes.slug}`}
+                    >
+                      {category.attributes.name}
+                    </NavLink>
+                  );
+                })}
             </HStack>
           </HStack>
           {/* {status === "loading" && <Spinner />}

@@ -1,29 +1,25 @@
 // import Articles from "../../components/articles";
-import Layout from "../../components/layout";
-// import Seo from "../../components/seo";
-import { getArticlesBySlug } from "../../queries/articles";
-import getCategories, { getCategorieBySlug } from "../../queries/categories";
-import client from "../../apollo-client";
-import axios from "axios";
+import Seo from "../../components/seo";
 import { getQuery } from "../../queries";
+import getCategories, { getCategorieBySlug } from "../../queries/categories";
 
 const Category = ({ category, categories }) => {
   console.log(category);
-  //   const seo = {
-  //     metaTitle: category.attributes.name,
-  //     metaDescription: `All ${category.attributes.name} articles`,
-  //   };
+  const seo = {
+    metaTitle: category.attributes.name,
+    metaDescription: `All ${category.attributes.name} articles`,
+  };
 
   return (
-    <Layout categories={categories}>
-      {/* <Seo seo={seo} /> */}
+    <>
+      <Seo seo={seo} />
       <div className="uk-section">
         <div className="uk-container uk-container-large">
           <h1>{category.attributes.name}</h1>
           {/* <Articles articles={category.attributes.articles.data} /> */}
         </div>
       </div>
-    </Layout>
+    </>
   );
 };
 export default Category;
