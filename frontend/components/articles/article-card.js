@@ -1,3 +1,4 @@
+import React from "react";
 import {
   Box,
   chakra,
@@ -7,11 +8,9 @@ import {
   useColorModeValue,
 } from "@chakra-ui/react";
 import Link from "next/link";
-import React from "react";
 import { getStrapiMedia } from "../../lib/media";
 
 export function ArticleCard({ article }) {
-  console.log(article.image);
   return (
     <Box
       rounded="lg"

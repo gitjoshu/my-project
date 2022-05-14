@@ -1,4 +1,4 @@
-import { Box, Container, Heading } from "@chakra-ui/react";
+import { Box, Center, Container, Heading } from "@chakra-ui/react";
 import { CardWithMedia, ThreeColums, Seo, Testiomonials } from "../components";
 import { getQuery, getHomePage } from "../queries";
 import styles from "../styles/Home.module.css";
@@ -8,8 +8,9 @@ export default function Home({ homepage }) {
     <div className={styles.container}>
       <Seo seo={homepage.seo} />
       <main>
-        <Heading>{homepage.hero.title}</Heading>
-
+        <Heading>
+          <Center>{homepage.hero.title}</Center>
+        </Heading>
         <ThreeColums />
         <CardWithMedia />
         <Testiomonials />

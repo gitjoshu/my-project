@@ -1,4 +1,4 @@
-import { Heading } from "@chakra-ui/react";
+import { Center, Heading } from "@chakra-ui/react";
 import { ArticlesCardGrid } from "../../components";
 import { Seo } from "../../components/seo";
 import { getQuery, getCategorieBySlug, getCategories } from "../../queries";
@@ -12,7 +12,9 @@ const Category = ({ category }) => {
   return (
     <>
       <Seo seo={seo} />
-      <Heading>{category.attributes.name.toUpperCase()}</Heading>
+      <Heading>
+        <Center>{category.attributes.name}</Center>
+      </Heading>
       <ArticlesCardGrid articles={category.attributes.articles.data} />
     </>
   );
