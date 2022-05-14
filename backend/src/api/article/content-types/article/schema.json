@@ -5,7 +5,8 @@
     "singularName": "article",
     "pluralName": "articles",
     "displayName": "Article",
-    "name": "article"
+    "name": "article",
+    "description": ""
   },
   "options": {
     "increments": true,
@@ -35,20 +36,21 @@
       "type": "relation",
       "relation": "manyToOne",
       "target": "api::category.category",
-      "inversedBy": "articles"
+      "inversedBy": "articles",
+      "required": true
     },
     "image": {
-      "allowedTypes": [
-        "images"
-      ],
       "type": "media",
-      "multiple": false
+      "multiple": false,
+      "required": true,
+      "allowedTypes": ["images"]
     },
     "author": {
       "type": "relation",
       "relation": "manyToOne",
       "target": "api::writer.writer",
-      "inversedBy": "articles"
+      "inversedBy": "articles",
+      "required": true
     }
   }
 }
