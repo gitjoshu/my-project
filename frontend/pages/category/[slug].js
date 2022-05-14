@@ -1,7 +1,7 @@
 import { ArticlesCardGrid } from "../../components/articles-card-grid";
 import Seo from "../../components/seo";
 import { getQuery } from "../../queries";
-import getCategories, { getCategorieBySlug } from "../../queries/categories";
+import { getCategorieBySlug, getCategories } from "../../queries/categories";
 
 const Category = ({ category }) => {
   const seo = {

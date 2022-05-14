@@ -1,29 +1,6 @@
 import { gql } from "@apollo/client";
 
-const getArticles = ({ actualPage, pageSize }) => gql`
-  query Article {
-    articles(pagination: { page: ${actualPage}, pageSize: ${pageSize} }, sort: "createdAt:desc") {
-      data {
-        attributes {
-          title
-          description
-          createdAt
-        }
-      }
-      meta {
-        pagination {
-          page
-          pageSize
-          pageCount
-          total
-        }
-      }
-    }
-  }
-`;
-export default getArticles;
-
-export const getArticlesBySlug = () => gql`
+export const getArticles = () => gql`
   query ArticlesBySlug {
     articles {
       data {
@@ -71,6 +48,31 @@ export const getArticleBySlug = (slug) => gql`
         id
       }
 
+      meta {
+        pagination {
+          page
+          pageSize
+          pageCount
+          total
+        }
+      }
+    }
+  }
+`;
+
+export const getArticlesWithMetaAndPagination = ({
+  actualPage,
+  pageSize,
+}) => gql`
+  query Article {
+    articles(pagination: { page: ${actualPage}, pageSize: ${pageSize} }, sort: "createdAt:desc") {
+      data {
+        attributes {
+          title
+          description
+          createdAt
+        }
+      }
       meta {
         pagination {
           page

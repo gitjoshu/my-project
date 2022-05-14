@@ -2,7 +2,7 @@ import ArticleDetail from "../../components/article-detail";
 import Seo from "../../components/seo";
 import { getStrapiMedia } from "../../lib/media";
 import { getQuery } from "../../queries";
-import { getArticleBySlug, getArticlesBySlug } from "../../queries/articles";
+import { getArticleBySlug, getArticles } from "../../queries/articles";
 
 const Article = ({ article }) => {
   const seo = {
@@ -23,7 +23,7 @@ const Article = ({ article }) => {
 export default Article;
 
 export async function getStaticPaths() {
-  const { data: articlesData } = await getQuery(getArticlesBySlug);
+  const { data: articlesData } = await getQuery(getArticles);
   return {
     paths: articlesData.articles.data.map((article) => ({
       params: {

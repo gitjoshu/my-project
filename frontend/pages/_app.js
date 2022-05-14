@@ -2,7 +2,7 @@ import App from "next/app";
 import { createContext } from "react";
 import Layout from "../components/layout";
 import { getQuery } from "../queries";
-import getCategories from "../queries/categories";
+import { getCategories } from "../queries/categories";
 import getGlobal from "../queries/global";
 import "../styles/globals.css";
 import { ChakraProvider } from "@chakra-ui/react";
