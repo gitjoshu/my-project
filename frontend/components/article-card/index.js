@@ -6,8 +6,8 @@ import {
   Text,
   useColorModeValue,
 } from "@chakra-ui/react";
-import React from "react";
 import Link from "next/link";
+import React from "react";
 import { getStrapiMedia } from "../../lib/media";
 
 export default function ArticleCard({ article }) {

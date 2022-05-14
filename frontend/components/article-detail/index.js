@@ -2,25 +2,20 @@ import {
   Box,
   chakra,
   Container,
-  Stack,
-  Text,
-  Image,
   Flex,
-  VStack,
-  Button,
   Heading,
-  SimpleGrid,
-  StackDivider,
-  useColorModeValue,
-  VisuallyHidden,
-  List,
-  ListItem,
+  Image,
   Link,
+  SimpleGrid,
+  Stack,
+  StackDivider,
+  Text,
+  useColorModeValue,
+  VStack,
 } from "@chakra-ui/react";
 import { getStrapiMedia } from "../../lib/media";
 
 export default function ArticleDetail({ article }) {
-  console.log(article);
   return (
     <Container maxW={"7xl"}>
       <SimpleGrid

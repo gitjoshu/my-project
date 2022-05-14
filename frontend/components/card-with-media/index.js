@@ -1,5 +1,3 @@
-import React from "react";
-
 import {
   Box,
   Button,
@@ -8,6 +6,7 @@ import {
   SimpleGrid,
   useColorModeValue,
 } from "@chakra-ui/react";
+import React from "react";
 
 export default function CardWithMedia() {
   return (

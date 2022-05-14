@@ -1,15 +1,10 @@
-import Image from "next/image";
 import ArticleDetail from "../../components/article-detail";
 import Seo from "../../components/seo";
 import { getStrapiMedia } from "../../lib/media";
 import { getQuery } from "../../queries";
 import { getArticleBySlug, getArticlesBySlug } from "../../queries/articles";
-import getCategories from "../../queries/categories";
 
 const Article = ({ article }) => {
-  console.log(article);
-  const imageUrl = getStrapiMedia(article.attributes.image.data.attributes.url);
-
   const seo = {
     metaTitle: article.attributes.title,
     metaDescription: article.attributes.description,
