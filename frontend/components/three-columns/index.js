@@ -4,13 +4,7 @@ import { Feature } from "./feature";
 
 export function ThreeColums() {
   return (
-    <Flex
-      // bg={useColorModeValue("#F9FAFB", "gray.600")}
-      // p={20}
-      w="auto"
-      justifyContent="center"
-      alignItems="center"
-    >
+    <Flex w="auto" justifyContent="center" alignItems="center">
       <SimpleGrid
         columns={{ base: 1, md: 2, lg: 3 }}
         spacing={20}
@@ -31,7 +25,9 @@ export function ThreeColums() {
             />
           }
         >
-          type Project name: String tagline: String contributors: [User]
+          Lorem ipsum dolor sit amet, consectetur adipiscing elit. Maecenas
+          laoreet porttitor lorem sed venenatis. Vivamus porta non turpis quis
+          gravida.
         </Feature>
 
         <Feature
@@ -44,7 +40,9 @@ export function ThreeColums() {
             />
           }
         >
-          projectname: "GraphQL" tagline
+          Aenean fermentum placerat auctor. Vestibulum convallis augue eget sem
+          bibendum interdum. Etiam libero ex, eleifend nec dignissim in, finibus
+          vitae nisl.
         </Feature>
 
         <Feature
@@ -58,7 +56,8 @@ export function ThreeColums() {
             />
           }
         >
-          "project": "tagline": "A query language for APIs"
+          Proin vestibulum magna nec posuere dignissim. Aenean tempor blandit ex
+          vitae lobortis. Suspendisse malesuada nibh ac pellentesque blandit.
         </Feature>
       </SimpleGrid>
     </Flex>

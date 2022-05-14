@@ -3,6 +3,7 @@ import {
   Button,
   chakra,
   Flex,
+  Image,
   SimpleGrid,
   useColorModeValue,
 } from "@chakra-ui/react";
@@ -69,11 +70,14 @@ export function CardWithMedia() {
           <Box
             w="full"
             h="full"
-            py={48}
+            // py={48}
+            as={Image}
             bg={useColorModeValue("gray.200", "gray.700")}
-          >
-            Imagen aqui
-          </Box>
+            rounded="lg"
+            src={
+              "http://localhost:4444/uploads/what_s_inside_a_black_hole_b5c8f83fd4.jpg"
+            }
+          ></Box>
         </SimpleGrid>
         <SimpleGrid
           alignItems="center"
@@ -119,11 +123,13 @@ export function CardWithMedia() {
           <Box
             w="full"
             h="full"
-            py={48}
+            as={Image}
+            rounded="lg"
             bg={useColorModeValue("gray.200", "gray.700")}
-          >
-            Imagen aqui
-          </Box>
+            src={
+              "http://localhost:4444/uploads/a_bug_is_becoming_a_meme_on_the_internet_9504d857ff.jpg"
+            }
+          ></Box>
         </SimpleGrid>
       </Box>
     </Flex>

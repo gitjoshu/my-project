@@ -2,6 +2,7 @@ import { Seo, ArticleDetail } from "../../components";
 import { getQuery, getArticleBySlug, getArticles } from "../../queries";
 
 const Article = ({ article }) => {
+  console.log(article);
   const seo = {
     metaTitle: article.attributes.title,
     metaDescription: article.attributes.description,
