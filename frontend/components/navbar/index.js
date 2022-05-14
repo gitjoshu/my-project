@@ -101,7 +101,7 @@ export const Navbar = ({ categories, global }) => {
               >
                 <Avatar
                   size={"md"}
-                  src={getStrapiMedia(global.favicon.data.attributes.url)}
+                  // src={getStrapiMedia(global.favicon.data.attributes.url)}
                 />
               </MenuButton>
               {/* <MenuList>

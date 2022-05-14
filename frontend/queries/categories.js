@@ -26,7 +26,7 @@ export const getCategorieBySlug = (slug) => gql`
           articles {
             data {
               attributes {
-                title 
+                title
                 description
                 content
                 slug
@@ -41,6 +41,13 @@ export const getCategorieBySlug = (slug) => gql`
                   data {
                     attributes {
                       name
+                      picture {
+                        data {
+                          attributes {
+                            url
+                          }
+                        }
+                      }
                     }
                   }
                 }

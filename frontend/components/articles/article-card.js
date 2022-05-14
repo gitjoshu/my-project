@@ -16,7 +16,7 @@ export function ArticleCard({ article }) {
       rounded="lg"
       shadow="md"
       bg={useColorModeValue("white", "gray.800")}
-      // maxW="xs"
+      maxW="xs"
     >
       <Image
         roundedTop="lg"
@@ -55,7 +55,9 @@ export function ArticleCard({ article }) {
                 h={10}
                 fit="cover"
                 rounded="full"
-                src="https://images.unsplash.com/photo-1586287011575-a23134f797f9?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=48&q=60"
+                src={getStrapiMedia(
+                  article.author.data.attributes.picture.data.attributes.url
+                )}
                 alt="Avatar"
               />
               <Text>

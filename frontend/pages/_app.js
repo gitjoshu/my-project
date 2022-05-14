@@ -2,12 +2,13 @@ import App from "next/app";
 import { createContext } from "react";
 import { Layout } from "../components";
 import { getQuery, getCategories, getGlobal } from "../queries";
+import { ChakraProvider } from "@chakra-ui/react";
 import "../styles/globals.css";
-import { ChakraProvider, Container } from "@chakra-ui/react";
 
 export const GlobalContext = createContext({});
 function MyApp({ Component, pageProps, categories }) {
   const { global } = pageProps;
+  console.log(global);
   return (
     <GlobalContext.Provider value={global.attributes}>
       <ChakraProvider>
@@ -22,6 +23,7 @@ function MyApp({ Component, pageProps, categories }) {
 MyApp.getInitialProps = async (ctx) => {
   const appProps = await App.getInitialProps(ctx);
   const { data: globalRes } = await getQuery(getGlobal);
+  console.log(globalRes.global.data);
   const { data: categoriesData } = await getQuery(getCategories);
   return {
     ...appProps,
