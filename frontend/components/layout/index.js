@@ -7,7 +7,6 @@ import { Navbar } from "../navbar";
 
 export const Layout = ({ children, categories }) => {
   const global = useContext(GlobalContext);
-  console.log(global.favicon);
   return (
     <>
       <Head>

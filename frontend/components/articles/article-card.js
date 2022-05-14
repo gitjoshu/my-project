@@ -11,6 +11,7 @@ import React from "react";
 import { getStrapiMedia } from "../../lib/media";
 
 export function ArticleCard({ article }) {
+  console.log(article.image);
   return (
     <Box
       rounded="lg"
