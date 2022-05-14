@@ -1,8 +1,6 @@
-import CardWithMedia from "../components/card-with-media";
-import Seo from "../components/seo";
-import ThreeColums from "../components/three-columns";
-import { getQuery } from "../queries";
-import getHomePage from "../queries/homepage";
+import { Box, Container, Heading } from "@chakra-ui/react";
+import { CardWithMedia, ThreeColums, Seo, Testiomonials } from "../components";
+import { getQuery, getHomePage } from "../queries";
 import styles from "../styles/Home.module.css";
 
 export default function Home({ homepage }) {
@@ -10,11 +8,11 @@ export default function Home({ homepage }) {
     <div className={styles.container}>
       <Seo seo={homepage.seo} />
       <main>
-        <h5 className={styles.title}>
-          Las mejores noticias de {homepage.hero.title}
-        </h5>
+        <Heading>{homepage.hero.title}</Heading>
+
         <ThreeColums />
         <CardWithMedia />
+        <Testiomonials />
       </main>
 
       <footer className={styles.footer}>Powered by Joshu</footer>

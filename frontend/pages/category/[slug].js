@@ -1,7 +1,7 @@
-import { ArticlesCardGrid } from "../../components/articles-card-grid";
-import Seo from "../../components/seo";
-import { getQuery } from "../../queries";
-import { getCategorieBySlug, getCategories } from "../../queries/categories";
+import { Heading } from "@chakra-ui/react";
+import { ArticlesCardGrid } from "../../components";
+import { Seo } from "../../components/seo";
+import { getQuery, getCategorieBySlug, getCategories } from "../../queries";
 
 const Category = ({ category }) => {
   const seo = {
@@ -12,7 +12,7 @@ const Category = ({ category }) => {
   return (
     <>
       <Seo seo={seo} />
-      <h1>{category.attributes.name}</h1>
+      <Heading>{category.attributes.name.toUpperCase()}</Heading>
       <ArticlesCardGrid articles={category.attributes.articles.data} />
     </>
   );

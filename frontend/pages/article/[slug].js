@@ -1,8 +1,5 @@
-import ArticleDetail from "../../components/article-detail";
-import Seo from "../../components/seo";
-import { getStrapiMedia } from "../../lib/media";
-import { getQuery } from "../../queries";
-import { getArticleBySlug, getArticles } from "../../queries/articles";
+import { Seo, ArticleDetail } from "../../components";
+import { getQuery, getArticleBySlug, getArticles } from "../../queries";
 
 const Article = ({ article }) => {
   const seo = {

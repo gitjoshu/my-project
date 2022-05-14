@@ -14,3 +14,21 @@ a {
 * {
   box-sizing: border-box;
 }
+
+html::-webkit-scrollbar, html *::-webkit-scrollbar{
+  width: .5em;
+  height: .5em;
+}
+
+html::-webkit-scrollbar-thumb, html *::-webkit-scrollbar-thumb{
+  margin-top: 100px;
+  background: #fff8b7;
+  border-radius: 5px;
+  margin-top: 10px;
+  position: absolute;
+}
+
+html::-webkit-scrollbar-track, html *::-webkit-scrollbar-track{
+  margin-top: 8px;
+  margin-bottom: 8px;
+}

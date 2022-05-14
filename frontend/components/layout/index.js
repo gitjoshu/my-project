@@ -1,10 +1,11 @@
+import { Container } from "@chakra-ui/react";
 import Head from "next/head";
 import React, { useContext } from "react";
 import { getStrapiMedia } from "../../lib/media";
 import { GlobalContext } from "../../pages/_app";
-import Navbar from "../Navbar";
+import { Navbar } from "../navbar";
 
-const Layout = ({ children, categories }) => {
+export const Layout = ({ children, categories }) => {
   const global = useContext(GlobalContext);
   return (
     <>
@@ -14,10 +15,8 @@ const Layout = ({ children, categories }) => {
           href={getStrapiMedia(global.favicon.data.attributes.url)}
         />
       </Head>
-      <Navbar categories={categories} />
-      {children}
+      <Navbar categories={categories} global={global} />
+      <Container maxW="8xl">{children}</Container>
     </>
   );
 };
-
-export default Layout;

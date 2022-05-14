@@ -8,11 +8,12 @@ import {
 } from "@chakra-ui/react";
 import React from "react";
 
-export default function CardWithMedia() {
+export function CardWithMedia() {
   return (
     <Flex
-      bg={useColorModeValue("#F9FAFB", "gray.600")}
-      p={20}
+      // bg={useColorModeValue("#F9FAFB", "gray.600")}
+      // p={20}
+      py={10}
       w="full"
       justifyContent="center"
       alignItems="center"

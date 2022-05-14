@@ -1,5 +1,6 @@
 import { CloseIcon, HamburgerIcon } from "@chakra-ui/icons";
 import {
+  Avatar,
   Box,
   Button,
   Flex,
@@ -16,16 +17,20 @@ import {
 } from "@chakra-ui/react";
 import NextLink from "next/link";
 import React from "react";
+import { getStrapiMedia } from "../../lib/media";
 
 const NavLink = ({ children, href }) => (
   <NextLink passHref href={href}>
     <Link
       px={2}
       py={1}
+      textColor="white"
+      textTransform="uppercase"
       rounded={"md"}
       _hover={{
         textDecoration: "none",
         bg: useColorModeValue("gray.200", "gray.700"),
+        color: "gray.600",
       }}
     >
       {children}
@@ -33,13 +38,13 @@ const NavLink = ({ children, href }) => (
   </NextLink>
 );
 
-const Navbar = ({ categories }) => {
+export const Navbar = ({ categories, global }) => {
   const { isOpen, onOpen, onClose } = useDisclosure();
   //   const { data: session, status } = useSession();
 
   return (
     <>
-      <Box bg={useColorModeValue("gray.100", "gray.900")} px={4}>
+      <Box bg={"gray.200"} px={4} shadow="md">
         <Flex h={16} alignItems={"center"} justifyContent={"space-between"}>
           <IconButton
             size={"md"}
@@ -50,15 +55,20 @@ const Navbar = ({ categories }) => {
           />
           <HStack spacing={8} alignItems={"center"}>
             <NextLink href="/" passHref>
-              {/* <a>
-                <NextImage
-                  src="/assets/img/logo.png"
-                  alt="Logo"
-                  width={32}
-                  height={32}
-                />
-              </a> */}
-              Home
+              <Link
+                px={2}
+                py={1}
+                textColor="white"
+                textTransform="uppercase"
+                rounded={"md"}
+                _hover={{
+                  textDecoration: "none",
+                  bg: useColorModeValue("gray.200", "gray.700"),
+                  color: "gray.600",
+                }}
+              >
+                HOME
+              </Link>
             </NextLink>
             <HStack
               as={"nav"}
@@ -89,11 +99,14 @@ const Navbar = ({ categories }) => {
                 cursor={"pointer"}
                 minW={0}
               >
-                {/* <Avatar size={"sm"} src={session.user.image} /> */}
+                <Avatar
+                  size={"md"}
+                  src={getStrapiMedia(global.favicon.data.attributes.url)}
+                />
               </MenuButton>
-              <MenuList>
+              {/* <MenuList>
                 <MenuItem>Log out</MenuItem>
-              </MenuList>
+              </MenuList> */}
             </Menu>
           </Flex>
           {/* )} */}
@@ -119,5 +132,3 @@ const Navbar = ({ categories }) => {
     </>
   );
 };
-
-export default Navbar;

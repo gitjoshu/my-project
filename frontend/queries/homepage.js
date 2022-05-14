@@ -1,6 +1,6 @@
 import { gql } from "@apollo/client";
 
-const getHomePage = () => gql`
+export const getHomePage = () => gql`
   query Homepage {
     homepage {
       data {
@@ -17,4 +17,3 @@ const getHomePage = () => gql`
     }
   }
 `;
-export default getHomePage;

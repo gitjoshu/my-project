@@ -1,6 +1,6 @@
 import { gql } from "@apollo/client";
 
-const getGlobal = () => gql`
+export const getGlobal = () => gql`
   query Global {
     global {
       data {
@@ -30,4 +30,3 @@ const getGlobal = () => gql`
     }
   }
 `;
-export default getGlobal;

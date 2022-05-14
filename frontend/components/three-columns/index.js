@@ -1,19 +1,12 @@
+import { Flex, SimpleGrid, useColorModeValue } from "@chakra-ui/react";
 import React from "react";
-import {
-  chakra,
-  Box,
-  SimpleGrid,
-  Flex,
-  useColorModeValue,
-  Icon,
-} from "@chakra-ui/react";
 import { Feature } from "./feature";
 
-export default function ThreeColums() {
+export function ThreeColums() {
   return (
     <Flex
-      bg={useColorModeValue("#F9FAFB", "gray.600")}
-      p={20}
+      // bg={useColorModeValue("#F9FAFB", "gray.600")}
+      // p={20}
       w="auto"
       justifyContent="center"
       alignItems="center"

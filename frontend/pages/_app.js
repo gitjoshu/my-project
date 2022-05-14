@@ -1,11 +1,9 @@
 import App from "next/app";
 import { createContext } from "react";
-import Layout from "../components/layout";
-import { getQuery } from "../queries";
-import { getCategories } from "../queries/categories";
-import getGlobal from "../queries/global";
+import { Layout } from "../components";
+import { getQuery, getCategories, getGlobal } from "../queries";
 import "../styles/globals.css";
-import { ChakraProvider } from "@chakra-ui/react";
+import { ChakraProvider, Container } from "@chakra-ui/react";
 
 export const GlobalContext = createContext({});
 function MyApp({ Component, pageProps, categories }) {
