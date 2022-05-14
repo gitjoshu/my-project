@@ -17,7 +17,6 @@ const Seo = ({ seo }) => {
     // Get full image URL
     shareImage: getStrapiMedia(seoWithDefaults.shareImage.data.attributes.url),
   };
-  console.log(fullSeo);
 
   return (
     <Head>

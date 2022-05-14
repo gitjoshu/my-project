@@ -1,11 +1,12 @@
 import Image from "next/image";
+import ArticleDetail from "../../components/article-detail";
 import Seo from "../../components/seo";
 import { getStrapiMedia } from "../../lib/media";
 import { getQuery } from "../../queries";
 import { getArticleBySlug, getArticlesBySlug } from "../../queries/articles";
 import getCategories from "../../queries/categories";
 
-const Article = ({ article, categories }) => {
+const Article = ({ article }) => {
   console.log(article);
   const imageUrl = getStrapiMedia(article.attributes.image.data.attributes.url);
 
@@ -19,13 +20,7 @@ const Article = ({ article, categories }) => {
   return (
     <>
       <Seo seo={seo} />
-      <h1>{article.attributes.title}</h1>
-      <Image src={imageUrl} width={50} height={50} />
-
-      <div>
-        <p>{article.attributes.description}</p>
-        <p>{article.attributes.published_at}</p>
-      </div>
+      <ArticleDetail article={article} />
     </>
   );
 };
@@ -46,11 +41,9 @@ export async function getStaticPaths() {
 
 export async function getStaticProps({ params }) {
   const { data: articleData } = await getQuery(getArticleBySlug, params.slug);
-  const { data: categoriesData } = await getQuery(getCategories);
   return {
     props: {
       article: articleData.articles.data[0],
-      categories: categoriesData.categories.data,
     },
     revalidate: 86400, // 60 * 60 * 24,
   };

@@ -49,7 +49,7 @@ const Navbar = ({ categories }) => {
             onClick={isOpen ? onClose : onOpen}
           />
           <HStack spacing={8} alignItems={"center"}>
-            <NextLink href="/prueba" passHref>
+            <NextLink href="/" passHref>
               {/* <a>
                 <NextImage
                   src="/assets/img/logo.png"
@@ -58,7 +58,7 @@ const Navbar = ({ categories }) => {
                   height={32}
                 />
               </a> */}
-              Homeprueba
+              Home
             </NextLink>
             <HStack
               as={"nav"}

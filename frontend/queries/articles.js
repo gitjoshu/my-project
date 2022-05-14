@@ -43,12 +43,27 @@ export const getArticleBySlug = (slug) => gql`
         attributes {
           title
           description
+          content
           createdAt
           image {
             data {
               attributes {
                 ext
                 url
+              }
+            }
+          }
+          author {
+            data {
+              attributes {
+                name
+                picture {
+                  data {
+                    attributes {
+                      url
+                    }
+                  }
+                }
               }
             }
           }

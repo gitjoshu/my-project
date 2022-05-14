@@ -24,6 +24,31 @@ export const getCategorieBySlug = (slug) => gql`
           name
           slug
           createdAt
+          articles {
+            data {
+              attributes {
+                title 
+                description
+                content
+                slug
+                image {
+                  data {
+                    attributes {
+                      url
+                    }
+                  }
+                }
+                author {
+                  data {
+                    attributes {
+                      name
+                    }
+                  }
+                }
+                createdAt
+              }
+            }
+          }
         }
         id
       }

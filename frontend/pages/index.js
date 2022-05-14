@@ -1,9 +1,11 @@
+import ThreeColums from "../components/three-columns";
 import Seo from "../components/seo";
 import { getQuery } from "../queries";
 import getArticles from "../queries/articles";
 import getCategories from "../queries/categories";
 import getHomePage from "../queries/homepage";
 import styles from "../styles/Home.module.css";
+import CardWithMedia from "../components/card-with-media";
 
 export default function Home({ articles, categories, homepage }) {
   // console.log(articles);
@@ -12,10 +14,12 @@ export default function Home({ articles, categories, homepage }) {
   return (
     <div className={styles.container}>
       <Seo seo={homepage.seo} />
-      <main className={styles.main}>
+      <main>
         <h5 className={styles.title}>
           Las mejores noticias de {homepage.hero.title}
         </h5>
+        <ThreeColums />
+        <CardWithMedia />
       </main>
 
       <footer className={styles.footer}>Powered by Joshu</footer>
