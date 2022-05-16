@@ -3,10 +3,10 @@
     "@strapi/plugin-graphql": "^4.0.0",
     "lodash.set": "^4.3.2",
     "mime-types": "^2.1.27",
-    "@strapi/strapi": "4.1.9",
-    "@strapi/plugin-users-permissions": "4.1.9",
-    "@strapi/plugin-i18n": "4.1.9",
-    "better-sqlite3": "7.4.6"
+    "@strapi/strapi": "4.1.11",
+    "@strapi/plugin-users-permissions": "4.1.11",
+    "@strapi/plugin-i18n": "4.1.11",
+    "pg": "8.6.0"
   },
   "name": "backend",
   "private": true,
@@ -23,7 +23,7 @@
     "name": "A Strapi developer"
   },
   "strapi": {
-    "uuid": "3a92cb87-5922-4712-ad96-55a897aa8e6a",
+    "uuid": "9cfd7f9f-6d6c-462d-864f-751a77784100",
     "template": "@strapi/template-blog@^1.0.0",
     "starter": "@strapi/starter-next-blog"
   },

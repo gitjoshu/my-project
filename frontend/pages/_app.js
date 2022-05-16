@@ -3,19 +3,26 @@ import { createContext } from "react";
 import { Layout } from "../components";
 import { getQuery, getCategories, getGlobal } from "../queries";
 import { ChakraProvider } from "@chakra-ui/react";
+import { SessionProvider } from "next-auth/react";
 import "../styles/globals.css";
 
 export const GlobalContext = createContext({});
-function MyApp({ Component, pageProps, categories }) {
+function MyApp({
+  Component,
+  pageProps: { session, ...pageProps },
+  categories,
+}) {
   const { global } = pageProps;
   return (
-    <GlobalContext.Provider value={global.attributes}>
-      <ChakraProvider>
-        <Layout categories={categories}>
-          <Component {...pageProps} />
-        </Layout>
-      </ChakraProvider>
-    </GlobalContext.Provider>
+    <SessionProvider session={session}>
+      <GlobalContext.Provider value={global.attributes}>
+        <ChakraProvider>
+          <Layout categories={categories}>
+            <Component {...pageProps} />
+          </Layout>
+        </ChakraProvider>
+      </GlobalContext.Provider>
+    </SessionProvider>
   );
 }
 
