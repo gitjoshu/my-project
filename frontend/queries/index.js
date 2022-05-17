@@ -1,8 +1,4 @@
 import client from "../apollo-client";
-import "./articles";
-import "./categories";
-import "./global";
-import "./homepage";
 export * from "./articles";
 export * from "./categories";
 export * from "./global";
