@@ -1,0 +1,20 @@
+{
+  "kind": "singleType",
+  "collectionName": "inicio_sesions",
+  "info": {
+    "singularName": "inicio-sesion",
+    "pluralName": "inicio-sesions",
+    "displayName": "InicioSesion"
+  },
+  "options": {
+    "draftAndPublish": false
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "seo": {
+      "type": "component",
+      "repeatable": true,
+      "component": "shared.seo"
+    }
+  }
+}

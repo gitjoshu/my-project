@@ -1,4 +1,5 @@
 import { Container } from "@chakra-ui/react";
+import { useSession } from "next-auth/react";
 import Head from "next/head";
 import React, { useContext } from "react";
 import { getStrapiMedia } from "../../lib/media";
@@ -7,6 +8,7 @@ import { Navbar } from "../navbar";
 
 export const Layout = ({ children, categories }) => {
   const global = useContext(GlobalContext);
+  const { status } = useSession();
   return (
     <>
       <Head>
@@ -15,8 +17,10 @@ export const Layout = ({ children, categories }) => {
           href={getStrapiMedia(global.favicon.data.attributes.url)}
         />
       </Head>
-      <Navbar categories={categories} global={global} />
-      <Container maxW="8xl">{children}</Container>
+      {status === "authenticated" && (
+        <Navbar categories={categories} global={global} />
+      )}
+      {status !== "loading" && <Container maxW="8xl">{children}</Container>}
     </>
   );
 };

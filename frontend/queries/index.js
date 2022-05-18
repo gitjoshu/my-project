@@ -3,6 +3,7 @@ export * from "./articles";
 export * from "./categories";
 export * from "./global";
 export * from "./homepage";
+export * from "./login";
 
 export const getQuery = async (query, params) => {
   return await client.query({

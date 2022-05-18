@@ -11,10 +11,12 @@ import {
   MenuButton,
   MenuItem,
   MenuList,
+  Spinner,
   Stack,
   useColorModeValue,
   useDisclosure,
 } from "@chakra-ui/react";
+import { signOut, useSession } from "next-auth/react";
 import NextLink from "next/link";
 import React from "react";
 import { getStrapiMedia } from "../../lib/media";
@@ -40,7 +42,7 @@ const NavLink = ({ children, href }) => (
 
 export const Navbar = ({ categories, global }) => {
   const { isOpen, onOpen, onClose } = useDisclosure();
-  //   const { data: session, status } = useSession();
+  const { data: session, status } = useSession();
 
   return (
     <>
@@ -88,28 +90,28 @@ export const Navbar = ({ categories, global }) => {
                 })}
             </HStack>
           </HStack>
-          {/* {status === "loading" && <Spinner />}
-          {status === "authenticated" && ( */}
-          <Flex alignItems={"center"}>
-            <Menu>
-              <MenuButton
-                as={Button}
-                rounded={"full"}
-                variant={"link"}
-                cursor={"pointer"}
-                minW={0}
-              >
-                <Avatar
-                  size={"md"}
-                  // src={getStrapiMedia(global.favicon.data.attributes.url)}
-                />
-              </MenuButton>
-              {/* <MenuList>
-                <MenuItem>Log out</MenuItem>
-              </MenuList> */}
-            </Menu>
-          </Flex>
-          {/* )} */}
+          {status === "loading" && <Spinner />}
+          {status === "authenticated" && (
+            <Flex alignItems={"center"}>
+              <Menu>
+                <MenuButton
+                  as={Button}
+                  rounded={"full"}
+                  variant={"link"}
+                  cursor={"pointer"}
+                  minW={0}
+                >
+                  <Avatar
+                    size={"md"}
+                    // src={getStrapiMedia(global.favicon.data.attributes.url)}
+                  />
+                </MenuButton>
+                <MenuList>
+                  <MenuItem onClick={() => signOut()}>Cerrar sesión</MenuItem>
+                </MenuList>
+              </Menu>
+            </Flex>
+          )}
         </Flex>
 
         {isOpen ? (

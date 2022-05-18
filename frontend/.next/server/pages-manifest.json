@@ -1,8 +1,10 @@
 {
+  "/_middleware": "pages/_middleware.js",
   "/_app": "pages/_app.js",
   "/_error": "pages/_error.js",
   "/_document": "pages/_document.js",
-  "/404": "pages/404.js",
+  "/category/[slug]": "pages/category/[slug].js",
   "/api/auth/[...nextauth]": "pages/api/auth/[...nextauth].js",
-  "/": "pages/index.js"
+  "/": "pages/index.js",
+  "/article/[slug]": "pages/article/[slug].js"
 }
