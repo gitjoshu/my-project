@@ -75,7 +75,7 @@ export function CardWithMedia() {
             bg={useColorModeValue("gray.200", "gray.700")}
             rounded="lg"
             src={
-              "http://localhost:4444/uploads/what_s_inside_a_black_hole_b5c8f83fd4.jpg"
+              "http://localhost:4444/uploads/what_s_inside_a_black_hole_8c853dcca1.jpg"
             }
           ></Box>
         </SimpleGrid>
@@ -127,7 +127,7 @@ export function CardWithMedia() {
             rounded="lg"
             bg={useColorModeValue("gray.200", "gray.700")}
             src={
-              "http://localhost:4444/uploads/a_bug_is_becoming_a_meme_on_the_internet_9504d857ff.jpg"
+              "http://localhost:4444/uploads/a_bug_is_becoming_a_meme_on_the_internet_bd3ceac3fd.jpg"
             }
           ></Box>
         </SimpleGrid>
