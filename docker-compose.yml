@@ -44,9 +44,9 @@ services:
       - ./frontend:/app
     restart: always
     environment:
-      - NEXT_PUBLIC_API_URL=http://localhost:4445/api
+      - NEXT_PUBLIC_API_URL=http://172.19.164.149:4445/api
       - GOOGLE_ID=181889887025-oducq2l9b0f90ps0vflfqmj8j5hc401u.apps.googleusercontent.com
       - GOOGLE_SECRET=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
-      - NEXTAUTH_URL=http://localhost:3001
+      - NEXTAUTH_URL=http://172.19.164.149:3001
       - NEXTAUTH_SECRET="49dc52e6bf2abe5ef6e2bb5b0f1ee2d765b922ae6cc8b95d39dc06c21c848f8c"
       - JWT_SECRET="49dc52e6bf2abe5ef6e2bb5b0f1ee2d765b922ae6cc8b95d39dc06c21c848f8c"
